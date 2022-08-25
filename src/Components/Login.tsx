@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, TextField, Button, Link } from '@mui/material/';
 import { styled } from '@mui/material/styles';
 import Icons from '../Images/icons.png';
@@ -15,7 +14,6 @@ const StyleFiled = styled(TextField)`
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   background: #fafafa;
-  width: 100%;
   max-width: 268px;
   & label.Mui-focused {
     transform: translate(12px, 5px) scale(0.9);
@@ -71,7 +69,7 @@ const ORBox = styled(Box)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-inedx: -1;
+    z-index: -1;
   }
 `;
 const StyleLink = styled(Link)`
@@ -98,15 +96,16 @@ const FindPassword = styled(Link)`
   text-align: center;
   text-decoration: none;
 `;
+
 function Login() {
   return (
     <LoginForm component="form">
-      <StyleFiled
+      <StyleFiled 
         id="filled-basic"
         label="전화번호, 사용자 이름 또는 이메일"
-        variant="filled"
+        variant="filled"  fullWidth
       />
-      <StyleFiled id="filled-basic" label="비밀번호" variant="filled" />
+      <StyleFiled id="filled-basic" label="비밀번호" variant="filled" fullWidth />
       <StyleButton variant="contained" disabled>
         로그인
       </StyleButton>
