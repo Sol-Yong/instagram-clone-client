@@ -1,10 +1,15 @@
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Stack, Paper, Link } from '@mui/material/';
+import { Box, Stack, Link } from '@mui/material/';
 import { styled } from '@mui/material/styles';
 import phoneBackground from '../Images/phone_background.png';
 import textLogo from '../Images/text_logo.png';
+import AppleStore from '../Images/appleStore.png';
+import GooglePlay from '../Images/googlePlay.png';
+import PhoneContent from '../Images/phone_content1.png';
 import Login from '../Components/Login';
+import Join from '../Components/Join';
+import Footer from '../Components/Footer';
 
 const Container = styled(Grid)`
   background-color: #fafafa;
@@ -16,6 +21,9 @@ const Main = styled(Box)`
   width: 100%;
   height: 83vh;
   display: flex;
+  @media screen and (max-width: 450px) {
+    height: 77vh;
+  }
 `;
 const ContentBox = styled(Box)`
   width: 100%;
@@ -25,6 +33,10 @@ const ContentBox = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 450px) {
+    align-items: flex-start;
+    margin-top: 0;
+  }
 `;
 const PhoneBox = styled(Box)`
   background-image: url(${phoneBackground});
@@ -33,6 +45,9 @@ const PhoneBox = styled(Box)`
   margin-bottom: 12px;
   margin-right: 32px;
   background-position: -46px 0;
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
 `;
 const LoginBox = styled(Box)`
   color: #262626;
@@ -41,6 +56,12 @@ const LoginBox = styled(Box)`
   justify-content: center;
   margin-top: 12px;
   max-width: 350px;
+  @media screen and (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
 `;
 const CustomFrom = styled(Stack)`
   align-items: center;
@@ -49,6 +70,10 @@ const CustomFrom = styled(Stack)`
   border-radius: 1px;
   margin: 0 0 10px;
   padding: 10px 0;
+  @media screen and (max-width: 450px) {
+    border: none;
+    background-color: transparent;
+  }
 `;
 const Logo = styled(Box)`
   display: flex;
@@ -58,29 +83,28 @@ const Logo = styled(Box)`
   justify-content: center;
   align-items: center;
 `;
-const Footer = styled(Stack)`
-  background-color: #fafafa;
-  width: 100%;
-  height: 17vh;
-`;
-const Item = styled(Paper)`
+const DownloadBox = styled(Box)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  box-shadow: none;
-  &:first-child {
-    margin-top: 24px;
+  & p {
+    margin: 10px 20px 10px 20px;
+    color: rgba(var(--i1d, 38, 38, 38), 1);
+    font-size: 14px;
+    line-height: 18px;
   }
-  &:last-child {
-    margin: 5px 0;
+  & div {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    & a:first-of-type {
+      margin-right: 10px;
+    }
+    & a img {
+      height: 40px;
+    }
   }
-`;
-const StyleLink = styled(Link)`
-  font-size: 12px;
-  text-decoration: none;
-  margin: 0 8px 12px;
-  color: #8e8e8e;
 `;
 
 function MainLogin() {
@@ -88,7 +112,15 @@ function MainLogin() {
     <Container>
       <Main>
         <ContentBox>
-          <PhoneBox></PhoneBox>
+          <PhoneBox>
+            <Box sx={{ margin: '27px 0 0 113px', position: 'relative' }}>
+              <img
+                src={PhoneContent}
+                alt="인스타 화면예시1"
+                style={{ height: '538.84px' }}
+              />
+            </Box>
+          </PhoneBox>
           <LoginBox>
             <CustomFrom spacing={2}>
               <Logo>
@@ -100,41 +132,30 @@ function MainLogin() {
               </Logo>
               <Login />
             </CustomFrom>
-            <CustomFrom spacing={2}>111</CustomFrom>
-            <CustomFrom spacing={2}>111</CustomFrom>
-            <CustomFrom spacing={2}>111</CustomFrom>
-            <CustomFrom spacing={2}>111</CustomFrom>
+            <CustomFrom spacing={2} sx={{ padding: '5px 0' }}>
+              <Join />
+            </CustomFrom>
+            <DownloadBox>
+              <p>앱을 다운로드하세요.</p>
+              <Box>
+                <Link>
+                  <img
+                    src={AppleStore}
+                    alt="애플스토어에 다운받으러 바로가기"
+                  />
+                </Link>
+                <Link>
+                  <img
+                    src={GooglePlay}
+                    alt="구글플레이에 다운받으러 바로가기"
+                  />
+                </Link>
+              </Box>
+            </DownloadBox>
           </LoginBox>
         </ContentBox>
       </Main>
-      <Footer>
-        <Item>
-          <StyleLink href="#">Meta</StyleLink>
-          <StyleLink href="#">소개</StyleLink>
-          <StyleLink href="#">블로그</StyleLink>
-          <StyleLink href="#">채용 정보</StyleLink>
-          <StyleLink href="#">도움말</StyleLink>
-          <StyleLink href="#">API</StyleLink>
-          <StyleLink href="#">개인정보처리방침</StyleLink>
-          <StyleLink href="#">약관</StyleLink>
-          <StyleLink href="#">인기 계정</StyleLink>
-          <StyleLink href="#">해시태그</StyleLink>
-          <StyleLink href="#">위치</StyleLink>
-          <StyleLink href="#">Instagram Lite</StyleLink>
-          <StyleLink href="#">연락처 업로드 & 비사용자</StyleLink>
-        </Item>
-        <Item>
-          <StyleLink href="#">댄스</StyleLink>
-          <StyleLink href="#">식음료</StyleLink>
-          <StyleLink href="#">집 및 정원</StyleLink>
-          <StyleLink href="#">음악</StyleLink>
-          <StyleLink href="#">시각 예술</StyleLink>
-        </Item>
-        <Item>
-          <StyleLink href="#">한국어</StyleLink>
-          <StyleLink href="#">© 2022 Instagram from Meta</StyleLink>
-        </Item>
-      </Footer>
+      <Footer />
     </Container>
   );
 }
