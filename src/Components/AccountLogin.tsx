@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Link } from '@mui/material/';
+import { Box } from '@mui/material/';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 const JoinForm = styled(Box)`
   width: 100%;
   display: flex;
@@ -23,17 +24,17 @@ const JoinForm = styled(Box)`
   }
 `;
 
-function Join() {
+function AccountLogin() {
   return (
     <JoinForm component="form">
       <p>
-        계정이 없으신가요?
-        <Link href="#">
-          <span>가입하기</span>
+        계정이 있으신가요?
+        <Link to="/accounts/login">
+          <span>로그인</span>
         </Link>
       </p>
     </JoinForm>
   );
 }
 
-export default Join;
+export default AccountLogin;
