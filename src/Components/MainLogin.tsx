@@ -1,6 +1,6 @@
 import { Box, TextField, Button, Link } from '@mui/material/';
 import { styled } from '@mui/material/styles';
-import Icons from '../Images/icons.png';
+import Icons from '../images/icons.png';
 const LoginForm = styled(Box)`
   width: 100%;
   display: flex;
@@ -100,12 +100,18 @@ const FindPassword = styled(Link)`
 function Login() {
   return (
     <LoginForm component="form">
-      <StyleFiled 
+      <StyleFiled
         id="filled-basic"
         label="전화번호, 사용자 이름 또는 이메일"
-        variant="filled"  fullWidth
+        variant="filled"
+        fullWidth
       />
-      <StyleFiled id="filled-basic" label="비밀번호" variant="filled" fullWidth />
+      <StyleFiled
+        id="filled-basic"
+        label="비밀번호"
+        variant="filled"
+        fullWidth
+      />
       <StyleButton variant="contained" disabled>
         로그인
       </StyleButton>
