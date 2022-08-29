@@ -69,7 +69,6 @@ const ORBox = styled(Box)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: -1;
   }
 `;
 const StyleLink = styled(Link)`

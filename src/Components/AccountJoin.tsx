@@ -1,7 +1,6 @@
-import { Box, TextField, Button } from '@mui/material/';
+import { Box, TextField, Button,Typography } from '@mui/material/';
 import { styled } from '@mui/material/styles';
 import Icons from '../Images/icons.png';
-import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const LoginForm = styled(Box)`
@@ -73,7 +72,6 @@ const ORBox = styled(Box)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-inedx: -1;
   }
 `;
 const StyleLink = styled(Link)`
