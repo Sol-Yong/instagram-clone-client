@@ -12,6 +12,7 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
+  height: 60px;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgb(219, 219, 219);
@@ -27,17 +28,23 @@ const Nav = styled.nav`
     align-items: center;
     padding: 0 20px;
   }
+
+  & > div > a {
+    flex: 1 0 127px;
+  }
 `;
 
 const Logo = styled.img`
   width: 103px;
   height: 29px;
   margin-top: 10px;
+  flex: 1 0 127px;
 `;
 
 const IconsContainer = styled.div`
   display: flex;
-  margin-left: 24px;
+  justify-content: end;
+  flex: 1 0 127px;
   svg {
     cursor: pointer;
     font-size: 28px;
