@@ -15,14 +15,15 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgb(219, 219, 219);
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(255, 255, 255);
+  z-index: 3;
 
   & > div {
     max-width: calc(935px + 40px);
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0 20px;
   }
