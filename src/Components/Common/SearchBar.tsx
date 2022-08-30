@@ -37,9 +37,9 @@ const SearchInput = styled.input`
     Arial, sans-serif;
 `;
 
-const PlaceholderContanier = styled.div<{ focused: boolean }>`
+const PlaceholderContanier = styled.div`
   background: rgb(239, 239, 239);
-  display: ${(props) => (props.focused ? 'none' : 'flex')};
+  display: flex;
   flex-direction: column;
   font-size: 16px;
   padding: 0 16px;
@@ -55,10 +55,6 @@ const PlaceholderContanier = styled.div<{ focused: boolean }>`
   border-radius: 8px;
   height: 100%;
   width: 100%;
-
-  &:focus {
-    display: none;
-  }
 
   & > div > div {
     align-items: center;
@@ -78,7 +74,7 @@ const PlaceholderContanier = styled.div<{ focused: boolean }>`
 function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState('');
-  const [focused, setFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -88,18 +84,16 @@ function SearchBar() {
   };
 
   const handleFocus = () => {
+    setIsFocused(true);
     if (inputRef.current) {
       inputRef.current.focus();
     }
-    setFocused(true);
   };
 
-  const handleBlur = () => {
-    setFocused(false);
-  };
+  const handleBlur = () => setIsFocused(false);
 
   return (
-    <Container onClick={handleFocus}>
+    <Container>
       <SearchInput
         ref={inputRef}
         placeholder="검색"
@@ -108,14 +102,16 @@ function SearchBar() {
         onChange={handleInputChange}
         onBlur={handleBlur}
       />
-      <PlaceholderContanier focused={focused}>
-        <div>
+      {!isFocused && (
+        <PlaceholderContanier onClick={handleFocus}>
           <div>
-            <SearchOutlinedIcon />
-            <span>{value.length > 0 ? value : '검색'}</span>
+            <div>
+              <SearchOutlinedIcon />
+              <span>{value.length > 0 ? value : '검색'}</span>
+            </div>
           </div>
-        </div>
-      </PlaceholderContanier>
+        </PlaceholderContanier>
+      )}
     </Container>
   );
 }
