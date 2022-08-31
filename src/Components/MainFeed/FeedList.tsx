@@ -9,7 +9,7 @@ function FeedList({ feedList }: IFeedListProps) {
   return (
     <div>
       {feedList.map((feed) => (
-        <FeedItem feed={feed} />
+        <FeedItem feed={feed} key={feed.createdAt} />
       ))}
     </div>
   );

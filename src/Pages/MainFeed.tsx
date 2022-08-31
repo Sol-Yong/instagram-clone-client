@@ -27,6 +27,7 @@ export interface IFeed {
   comments: IComment[];
   feedImg: string;
   text: string;
+  createdAt: string;
 }
 
 function MainFeed() {
@@ -48,6 +49,7 @@ function MainFeed() {
       ],
       feedImg: 'https://i.ibb.co/QCX57ZR/Colorful-Smoke-1920x1080.jpg',
       text: '임시 데이터 입니다.',
+      createdAt: '2022년 8월 10일',
     },
     {
       user: {
@@ -66,6 +68,7 @@ function MainFeed() {
       ],
       feedImg: 'https://i.ibb.co/QCX57ZR/Colorful-Smoke-1920x1080.jpg',
       text: '임시 데이터 입니다.',
+      createdAt: '2022년 8월 11일',
     },
   ];
   return (
