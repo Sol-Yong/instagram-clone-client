@@ -38,12 +38,12 @@ function MainFeed() {
         username: 'yoo.__.oong',
       },
       likes: [
-        { name: '솔', username: 'solsol' },
+        { name: 'solsol', username: 'solsol' },
         { name: '용', username: 'yoo.__.oong' },
       ],
       comments: [
         {
-          username: '솔',
+          username: 'solsol',
           text: '안녕하세요.',
         },
       ],
@@ -65,7 +65,7 @@ function MainFeed() {
       ],
       comments: [
         {
-          username: '솔',
+          username: 'solsol',
           text: '안녕하세요.',
         },
       ],
