@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { IFeed } from '../../Pages/MainFeed';
 import Profile from './Feed/Profile';
 import Buttons from './Feed/Buttons';
+import UserText from './Feed/UserText';
+import CommentForm from './Feed/CommentForm';
 const Article = styled.article`
   max-width: 470px;
   border-radius: 8px;
@@ -63,23 +65,13 @@ const LikesContainer = styled.section`
 
 const ContentsContainer = styled.div`
   padding: 0 12px;
-  color: rgb(38, 38, 38);
-  font-size: 14px;
   margin-bottom: 8px;
-
-  & > span:first-child {
-    font-weight: 700;
-  }
 `;
 
 const CommentsContainer = styled.div`
   color: rgb(38, 38, 38);
   font-size: 14px;
   margin: 8px 0;
-
-  & > span:first-child {
-    font-weight: 700;
-  }
 `;
 
 const Date = styled.div`
@@ -114,18 +106,15 @@ function FeedItem({ feed }: IFeedItemProps) {
             <span>좋아요 {feed.likes.length}개</span>
           </LikesContainer>
           <ContentsContainer>
-            <span>{feed.user.username}</span>
-            <span>&nbsp;</span>
-            <span>{feed.text}</span>
-            {feed.comments.map((comment) => (
-              <CommentsContainer>
-                <span>{comment.username}</span>
-                <span>&nbsp;</span>
-                <span>{comment.text}</span>
+            <UserText username={feed.user.username} text={feed.text} />
+            {feed.comments.map((comment, index) => (
+              <CommentsContainer key={index}>
+                <UserText username={comment.username} text={comment.text} />
               </CommentsContainer>
             ))}
             <Date>{feed.createdAt}</Date>
           </ContentsContainer>
+          <CommentForm />
         </FeedBottomContainer>
       </Container>
     </Article>

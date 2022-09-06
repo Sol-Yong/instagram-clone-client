@@ -46,6 +46,10 @@ function MainFeed() {
           username: 'solsol',
           text: '안녕하세요.',
         },
+        {
+          username: 'solsol',
+          text: '반가워요.',
+        },
       ],
       feedImg: [
         'https://i.ibb.co/QCX57ZR/Colorful-Smoke-1920x1080.jpg',
