@@ -1,4 +1,4 @@
-import { Box, TextField, Button } from '@mui/material/';
+import { Box, TextField, Button,Typography } from '@mui/material/';
 import { styled } from '@mui/material/styles';
 import Icons from '../images/icons.png';
 import { Typography } from '@material-ui/core';
@@ -73,7 +73,6 @@ const ORBox = styled(Box)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-inedx: -1;
   }
 `;
 const StyleLink = styled(Link)`

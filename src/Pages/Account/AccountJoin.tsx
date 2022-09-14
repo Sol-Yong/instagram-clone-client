@@ -1,26 +1,26 @@
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box, Stack, Link } from '@mui/material/';
+import { Box, Stack, Link ,Typography} from '@mui/material/';
 import { styled } from '@mui/material/styles';
 import textLogo from '../../images/text_logo.png';
 import AppleStore from '../../images/appleStore.png';
 import GooglePlay from '../../images/googlePlay.png';
 import Login from '../../Components/AccountLogin';
+import ConnectionLink from '../../Components/ConnectionLink';
 import Join from '../../Components/AccountJoin';
-import Footer from '../../Components/AccountFooter';
-import { Typography } from '@material-ui/core';
+import Footer from '../../Components/Footer';
 
 const Container = styled(Grid)`
   background-color: #fafafa;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 `;
 const Main = styled(Box)`
   background-color: #fafafa;
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   @media screen and (max-width: 450px) {
-    height: 95vh;
+    min-height: 95vh;
   }
 `;
 const ContentBox = styled(Box)`
@@ -126,7 +126,7 @@ function MainJoin() {
               <Join />
             </CustomForm>
             <CustomForm spacing={2} sx={{ padding: '5px 0' }}>
-              <Login />
+              <ConnectionLink />
             </CustomForm>
             <DownloadBox>
               <p>앱을 다운로드하세요.</p>

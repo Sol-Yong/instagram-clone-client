@@ -13,21 +13,21 @@ import PhoneContent2 from '../images/phone_content2.png';
 import PhoneContent3 from '../images/phone_content3.png';
 import PhoneContent4 from '../images/phone_content4.png';
 import Login from '../Components/MainLogin';
-import Join from '../Components/MainJoin';
-import Footer from '../Components/MainFooter';
+import ConnectionLink from '../Components/ConnectionLink';
+import Footer from '../Components/Footer';
 
 const Container = styled(Grid)`
   background-color: #fafafa;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 `;
 const Main = styled(Box)`
   background-color: #fafafa;
   width: 100%;
-  height: 83vh;
+  min-height: 83vh;
   display: flex;
   @media screen and (max-width: 450px) {
-    height: 77vh;
+    min-height: 77vh;
   }
 `;
 const ContentBox = styled(Box)`
@@ -177,7 +177,7 @@ function MainLogin() {
               <Login />
             </CustomFrom>
             <CustomFrom spacing={2} sx={{ padding: '5px 0' }}>
-              <Join />
+              <ConnectionLink />
             </CustomFrom>
             <DownloadBox>
               <p>앱을 다운로드하세요.</p>
