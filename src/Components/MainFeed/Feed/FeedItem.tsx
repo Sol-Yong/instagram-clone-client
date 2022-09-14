@@ -1,16 +1,17 @@
 import styled from 'styled-components';
-import { IFeed } from '../../Pages/MainFeed';
-import Profile from './Feed/Profile';
-import Buttons from './Feed/Buttons';
-import UserText from './Feed/UserText';
-import CommentForm from './Feed/CommentForm';
+import { IFeed } from '../../../Pages/MainFeed';
+import Profile from './Profile';
+import Buttons from './Buttons';
+import UserText from './UserText';
+import CommentForm from './CommentForm';
+import Commnet from './Commnet';
 const Article = styled.article`
   max-width: 470px;
   border-radius: 8px;
   border: 1px solid rgb(219, 219, 219);
   box-sizing: content-box;
-  @media screen and (min-width: 640px) {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
+  @media screen and (max-width: 640px) {
     margin-left: -1px;
     margin-right: -1px;
   }
@@ -68,12 +69,6 @@ const ContentsContainer = styled.div`
   margin-bottom: 8px;
 `;
 
-const CommentsContainer = styled.div`
-  color: rgb(38, 38, 38);
-  font-size: 14px;
-  margin: 8px 0;
-`;
-
 const Date = styled.div`
   color: rgb(142, 142, 142);
   font-weight: 400;
@@ -108,9 +103,11 @@ function FeedItem({ feed }: IFeedItemProps) {
           <ContentsContainer>
             <UserText username={feed.user.username} text={feed.text} />
             {feed.comments.map((comment, index) => (
-              <CommentsContainer key={index}>
-                <UserText username={comment.username} text={comment.text} />
-              </CommentsContainer>
+              <Commnet
+                username={comment.username}
+                text={comment.text}
+                key={index}
+              />
             ))}
             <Date>{feed.createdAt}</Date>
           </ContentsContainer>

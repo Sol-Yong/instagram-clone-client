@@ -1,5 +1,14 @@
-import { IFeed } from '../../Pages/MainFeed';
+import styled from 'styled-components';
+import { IFeed } from '../../../Pages/MainFeed';
 import FeedItem from './FeedItem';
+
+const Container = styled.div`
+  margin-right: 32px;
+
+  @media screen and (max-width: 1000px) {
+    margin-right: 0px;
+  }
+`;
 
 interface IFeedListProps {
   feedList: IFeed[];
@@ -7,11 +16,11 @@ interface IFeedListProps {
 
 function FeedList({ feedList }: IFeedListProps) {
   return (
-    <div>
+    <Container>
       {feedList.map((feed) => (
         <FeedItem feed={feed} key={feed.createdAt} />
       ))}
-    </div>
+    </Container>
   );
 }
 
