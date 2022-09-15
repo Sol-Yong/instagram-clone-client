@@ -1,6 +1,7 @@
 import { Box, TextField, Button,Typography } from '@mui/material/';
 import { styled } from '@mui/material/styles';
-import Icons from '../Images/icons.png';
+import Icons from '../images/icons.png';
+import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const LoginForm = styled(Box)`

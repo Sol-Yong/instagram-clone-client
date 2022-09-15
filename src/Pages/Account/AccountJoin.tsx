@@ -1,9 +1,10 @@
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Stack, Link ,Typography} from '@mui/material/';
 import { styled } from '@mui/material/styles';
-import textLogo from '../../Images/text_logo.png';
-import AppleStore from '../../Images/appleStore.png';
-import GooglePlay from '../../Images/googlePlay.png';
+import textLogo from '../../images/text_logo.png';
+import AppleStore from '../../images/appleStore.png';
+import GooglePlay from '../../images/googlePlay.png';
+import Login from '../../Components/AccountLogin';
 import ConnectionLink from '../../Components/ConnectionLink';
 import Join from '../../Components/AccountJoin';
 import Footer from '../../Components/Footer';
