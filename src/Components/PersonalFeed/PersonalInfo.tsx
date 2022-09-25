@@ -2,24 +2,27 @@ import { Container, Box, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
+import Follows from './Follows';
 
 const PersonalFeedBox = styled(Container)`
   max-width: calc(935px + 40px);
   padding: 0 20px;
   padding-top: 86px;
+  margin-bottom: 44px;
 `;
 const UserInfoBox = styled(Box)`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 const UserImage = styled(Box)`
   height: calc(148px + 2px);
-  width: 150px;
-  margin-right: 30px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 `;
 const UserSetting = styled(Box)`
   display: flex;
@@ -29,7 +32,7 @@ const UserSetting = styled(Box)`
 
 function PersonalInfo() {
   return (
-    <PersonalFeedBox>
+    <PersonalFeedBox maxWidth="md">
       <UserInfoBox>
         <UserImage>
           <img
@@ -37,7 +40,7 @@ function PersonalInfo() {
             style={{ width: '150px', height: '150px', borderRadius: '50%' }}
           />
         </UserImage>
-        <Stack spacing={2} sx={{ width: '70%' }}>
+        <Stack spacing={2} sx={{ flex: '2' }}>
           <UserSetting>
             <Typography
               variant="h1"
@@ -67,6 +70,14 @@ function PersonalInfo() {
             </Link>
             <SettingsIcon sx={{ marginLeft: '10px' }} />
           </UserSetting>
+          <Follows />
+          <Box sx={{ margin: '0' }}>
+            <Box component="span" sx={{ fontWeight: '600' }}>
+              요혀주
+            </Box>
+            <br />
+            <Box component="span">ㅇㄴㄴ</Box>
+          </Box>
         </Stack>
       </UserInfoBox>
     </PersonalFeedBox>
