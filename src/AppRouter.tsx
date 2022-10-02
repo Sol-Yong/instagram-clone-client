@@ -13,7 +13,9 @@ const AppRouter = () => {
           <Route path="/" element={<MainLogin />} />
           {/* '/home'은 임시 경로임 로그인 가입하기 작업 시 '/' 경로로 교체 */}
           <Route path="/home" element={<MainFeed />} />
-          <Route path="/:userid" element={<PersonalFeed />} />
+          <Route path="/:userid" element={<PersonalFeed />}>
+            <Route path="saved" element={<PersonalFeed />} />
+          </Route>
           <Route path="/accounts/emailsignup" element={<AccountJoin />} />
           <Route path="/accounts/login" element={<AccountLogin />} />
         </Routes>

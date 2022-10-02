@@ -1,15 +1,9 @@
-import { Container, Box, Typography, Stack } from '@mui/material';
+import { Box, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Follows from './Follows';
 
-const PersonalFeedBox = styled(Container)`
-  max-width: calc(935px + 40px);
-  padding: 0 20px;
-  padding-top: 86px;
-  margin-bottom: 44px;
-`;
 const UserInfoBox = styled(Box)`
   width: 100%;
   display: flex;
@@ -32,7 +26,7 @@ const UserSetting = styled(Box)`
 
 function PersonalInfo() {
   return (
-    <PersonalFeedBox maxWidth="md">
+    <div style={{ marginBottom: '44px' }}>
       <UserInfoBox>
         <UserImage>
           <img
@@ -80,7 +74,7 @@ function PersonalInfo() {
           </Box>
         </Stack>
       </UserInfoBox>
-    </PersonalFeedBox>
+    </div>
   );
 }
 

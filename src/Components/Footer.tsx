@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack, Paper } from '@mui/material/';
 import { styled } from '@mui/material/styles';
-import { Link,useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const StyleFooter = styled(Stack)`
   background-color: #fafafa;
@@ -48,18 +48,18 @@ function Footer() {
         <StyleLink to="#">Instagram Lite</StyleLink>
         <StyleLink to="#">연락처 업로드 & 비사용자</StyleLink>
       </Item>
-      {
-        FOOTERLOCATION.pathname.split("/")[1] === "accounts" ? "" : (
-          <Item>
-            <StyleLink to="#">댄스</StyleLink>
-            <StyleLink to="#">식음료</StyleLink>
-            <StyleLink to="#">집 및 정원</StyleLink>
-            <StyleLink to="#">음악</StyleLink>
-            <StyleLink to="#">시각 예술</StyleLink>
-          </Item>
-        )
-      }
-      
+      {FOOTERLOCATION.pathname.split('/')[1] ? (
+        ''
+      ) : (
+        <Item>
+          <StyleLink to="#">댄스</StyleLink>
+          <StyleLink to="#">식음료</StyleLink>
+          <StyleLink to="#">집 및 정원</StyleLink>
+          <StyleLink to="#">음악</StyleLink>
+          <StyleLink to="#">시각 예술</StyleLink>
+        </Item>
+      )}
+
       <Item>
         <StyleLink to="#">한국어</StyleLink>
         <span
