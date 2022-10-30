@@ -15,6 +15,7 @@ const AppRouter = () => {
           <Route path="/home" element={<MainFeed />} />
           <Route path="/:userid" element={<PersonalFeed />}>
             <Route path="saved" element={<PersonalFeed />} />
+            <Route path="tagged" element={<PersonalFeed />} />
           </Route>
           <Route path="/accounts/emailsignup" element={<AccountJoin />} />
           <Route path="/accounts/login" element={<AccountLogin />} />
